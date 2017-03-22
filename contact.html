@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="contact.css">
+<link rel="shortcut icon" type="image/ico" href="favicon.png" />
+<title>ColiCSS</title>
+</head>
+<body>
+
+	<header>
+		<img src="header.png">
+	</header>	
+	<nav>
+		<a href="index.html">Home</a>
+		<a href="contact.html">Contact</a>
+	</nav>
+
+	<section>
+
+		<div id="map"></div>
+
+		<FORM method="GET" action="" onsubmit="return confirm('Bedankt voor het invullen!');">
+
+    <LABEL>Naam:</LABEL><BR>
+    <INPUT name="naam" type="text" required />
+    <BR><BR>
+
+    <LABEL>E-mailadres:</LABELS><BR>
+    <INPUT name="mail" type="email" required />
+    <BR><BR>
+
+    <LABEL>Telefoon:<small>10 cijfers</small></LABEL><BR>
+    <INPUT name="telefoon" type="number" /> 
+    <br><br>
+
+    <LABEL>Ik heb een vraag over...</LABEL><br>
+    <INPUT name="vraag" type="text" required />
+    <br><br>
+
+    <INPUT name="zenden" type="submit" value="Verstuur">
+ 
+
+</form>
+			
+	</section>
+
+	<footer>
+		<A href="http://facebook.com"> Facebook </a> 
+		<A href="http://instagram.com">	Instagram </a> 
+		<A href="http://twitter.com" > Twitter </a> 
+		<A href="sitemap.png" > Sitemap </a> 
+	</footer>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+        
+        <script type="text/javascript">
+            // When the window has finished loading create our google map below
+            google.maps.event.addDomListener(window, 'load', init);
+        
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 15,
+                    scrollwheel: false,
+
+                   // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(52.576068, 6.623131), // New York
+
+                   // How you would like to style the map.
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [
+    {
+        "featureType": "water",
+        "stylers": [
+            {
+                "saturation": 43
+            },
+            {
+                "lightness": -11
+            },
+            {
+                "hue": "#0088ff"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "hue": "#ff0000"
+            },
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 99
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#808080"
+            },
+            {
+                "lightness": 54
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.man_made",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#ece2d9"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#ccdca1"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#767676"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#b8cb93"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.sports_complex",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.medical",
+        "stylers": [
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.business",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    }
+]
+                };
+
+               // Get the HTML DOM element that will contain your map
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('map');
+
+               // Create the Google Map using our element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+
+               // Let's also add a marker while we're at it
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(52.576068, 6.623131),
+                    map: map,
+                    title: 'ColiCSS'
+                });
+            }
+        </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd4AtkT7mHLXGvm8FhaUdKzJTKlwKG15M&callback=initMap">
+    </script>
+
+</body>
+</html>
